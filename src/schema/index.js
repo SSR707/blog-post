@@ -1,0 +1,7 @@
+export * from './artical.schema.js'
+export * from './comment.schema.js'
+export * from './user.schema.js'
+export * from './category.schema.js'
+export * from './courses.schema.js'
+export * from './otp.schema.js'
+export * from './rquets.schema.js'
