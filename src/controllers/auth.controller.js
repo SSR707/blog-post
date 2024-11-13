@@ -30,7 +30,7 @@ export const registerController = async (req, res, next) => {
       });
     }
     const data = registerService(req.body)
-    if(data.status){
+    if(data){
       return res.status(statusCodes.CREATED).send("created");
     }
     return res

@@ -7,7 +7,6 @@ import {
     refreshTokenSing,
     sendMail,
   } from "../helpers/index.js";
-import { date } from "joi";
 
 export const registerService = async (data) => {
     try{ 
@@ -24,16 +23,16 @@ export const registerService = async (data) => {
             <h2 style="background: yellow;color: rgb(0, 0, 0);width: 7%;">${otp}</h2>
             </h1>`
           );
-          const user = new User(req.body);
+          const user = new User(data);
           await user.save();
           const db_otp = new OTP({
             user_id: user._id,
             otp_code: otp,
           });
           await db_otp.save();
-          return {satatus: true};
+          return  true;
         }
-        return {satatus: false};
+        return  false;
     }catch(error){
         throw error
     }
